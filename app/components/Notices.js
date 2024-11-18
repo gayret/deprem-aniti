@@ -1,16 +1,15 @@
 'use client'
 import { useEffect } from 'react'
-
 export default function Notice({ data }) {
-  const { clientWidth, clientHeight } = document.documentElement
-
-  function getRandomPosition() {
-    const x = Math.random() * (clientWidth - 100) // Genişlik içinde rastgele X
-    const y = Math.random() * (clientHeight - 100) // Yükseklik içinde rastgele Y
-    return { x, y }
-  }
-
   useEffect(() => {
+    const { clientWidth, clientHeight } = document.documentElement
+
+    function getRandomPosition() {
+      const x = Math.random() * (clientWidth - 100)
+      const y = Math.random() * (clientHeight - 100)
+      return { x, y }
+    }
+
     for (let i = 0; i < data.length; i++) {
       const a = document.createElement('a')
       a.classList.add('notice')
@@ -20,6 +19,8 @@ export default function Notice({ data }) {
       const { x, y } = getRandomPosition()
       a.style.left = `${x}px`
       a.style.top = `${y}px`
+
+      const container = document.getElementById('container')
 
       container.appendChild(a)
     }
