@@ -20,8 +20,31 @@ export default function Notice({ data }) {
       a.style.left = `${x}px`
       a.style.top = `${y}px`
 
-      const container = document.getElementById('container')
+      // çakışma kontrolü
+      const notices = document.querySelectorAll('.notice')
+      notices.forEach((notice) => {
+        if (
+          a.getBoundingClientRect().top < notice.getBoundingClientRect().bottom &&
+          a.getBoundingClientRect().bottom > notice.getBoundingClientRect().top &&
+          a.getBoundingClientRect().left < notice.getBoundingClientRect().right &&
+          a.getBoundingClientRect().right > notice.getBoundingClientRect().left
+        ) {
+          const { x, y } = getRandomPosition()
+          a.style.left = `${x}px`
+          a.style.top = `${y}px`
+        }
+      })
 
+      // rastgele renk atama
+      const r = Math.floor(Math.random() * 256)
+      const g = Math.floor(Math.random() * 256)
+      const b = Math.floor(Math.random() * 256)
+      a.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`
+
+      const angle = Math.floor(Math.random() * 10)
+      a.style.transform = `rotate(${angle}deg)`
+
+      const container = document.getElementById('container')
       container.appendChild(a)
     }
   })

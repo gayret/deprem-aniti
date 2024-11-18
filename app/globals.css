@@ -53,6 +53,7 @@ main {
   color: white;
   text-align: center;
   line-height: 1;
-  white-space: nowrap; /* Metni tek satırda tutar */
-  padding: 5px; /* Metin ile kenar arasındaki boşluk */
+  white-space: nowrap;
+  padding: 5px;
+  font-size: 0.8rem;
 }
