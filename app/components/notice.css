@@ -1,0 +1,41 @@
+.btn {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 8px 16px;
+}
+
+.notice {
+  position: absolute;
+  display: inline-block;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.normal-size {
+  font-size: 1.6rem;
+}
+
+.medium-size {
+  font-size: 2rem;
+}
+
+.large-size {
+  font-size: 2.4rem;
+}
+
+.x-large-size {
+  font-size: 2.8rem;
+}
+
+.xx-large-size {
+  font-size: 3.2rem;
+}
+
+.xxx-large-size {
+  font-size: 3.6rem;
+}
