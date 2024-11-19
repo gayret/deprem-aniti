@@ -16,6 +16,11 @@
   font-size: 0.8rem;
 }
 
+.notice:hover {
+  scale: 1.6;
+  z-index: 1;
+}
+
 .normal-size {
   font-size: 1.6rem;
 }
