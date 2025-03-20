@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Notices from './components/Notices'
 import { fetchAirtableTable } from './lib/airtable'
 
-export const revalidate = 60
+export const revalidate = 604800
 
 export default async function Home() {
   const data = await fetchAirtableTable('bildiri')
